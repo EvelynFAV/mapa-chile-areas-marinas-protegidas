@@ -1,27 +1,19 @@
 body {
     background-color: #D5D1D0;
 }
-.MapContainer h6 {
+.tituloMapa{
+    height: 40px;
+}
+.tituloMapa h6 {
+    letter-spacing: 2px;
     text-align: center;
     font-size: 40px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    width: 100%;
+    margin-top: 40px;
 }
-
-.mainContent {
-    display: flex;
-    flex-direction: row;
-    /* Organiza los elementos en una fila */
-    align-items: flex-start;
-    /* Alinea los elementos al principio verticalmente */
-    margin-top: 20px;
-    /* Espacio superior para separar del título */
-    position: relative;
-}
-
 .infoMapaContainer {
     position: absolute; /* Posiciona este contenedor sobre el SVG */
-    top: 0;
+    margin-top: 5px;
     left: 10; /* Alinea el contenedor en la parte izquierda */
     z-index: 10; /* Asegura que esté por encima del SVG */
     padding: 30px;
@@ -31,27 +23,26 @@ body {
     height: 100%;
     /* Ajusta la altura para cubrir todo el SVG, si es necesario */
 }
-
 .infoMapaContainer p {
-    font-size: 18px;
+    font-size: 16px;
     text-align: justify;
-    padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 1.1;
+    line-height: 1.2;
 }
-
 .infoMapaContainer h4 {
-    font-size: 19px;
+    font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+.infoMapaContainer h3 {
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .svgContainer {
     position: relative;
     overflow: hidden;
     /* Evita que el contenido desborde */
     margin-left: 200px;
 }
-
 .svgContainer svg {
     height: auto;
     /* Mantiene la proporción del SVG */
@@ -267,12 +258,14 @@ body {
 
 @media screen and (max-width: 480px) {
     .MapContainer h6 {
-        font-size: 28px;
+        font-size: 24px;
+        margin-top: 30px;
     }
     .MapContainer h4 {
         font-size: 16px;
         text-align: center;
         margin-top: 0px;
+        margin-top: 20px;
     }
     .MapContainer h3 {
         font-size: 14px;

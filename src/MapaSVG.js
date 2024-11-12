@@ -18,7 +18,7 @@ const MapaSVG = () => {
     }
   };
 
-  const handleClosePopup = () => {
+  const handleClosePopup = () => { //función para manejar el cierre y apertura del Pop up 
     setHoveredRegionId(null);
     setShowPopUp(false);
   };
@@ -30,16 +30,15 @@ const MapaSVG = () => {
       <div className='tituloMapa'>
         <h6>Áreas Marinas Protegidas</h6>
       </div>
-      <div className='mainContent'>
         <div className='infoMapaContainer'>
-          <h4><strong>¿Qué son las áreas Marinas protegidas?</strong></h4>
+          <h4><strong>¿Qué son las areas marinas protegidas?</strong></h4>
           <p>Son espacios geográficos específicos, reconocidos y gestionados mediante mecanismos
           legales, cuyo objetivo es la conservación de la naturaleza. Las AMP buscan
           mantener la biodiversidad, proporcionar refugio a especies comerciales y/o en peligro de
           extinción, proteger hábitats críticos y de reproducción, y construir resiliencia contra 
           el cambio climático.</p>
           <p>¡En esta sección encontrarás un mapa de Chile en el cual podrás conocer cuáles son las
-            <strong> Áreas Marinas Protegidas del país!. </strong> Para ello, haz <strong>CLICK </strong> 
+            <strong> áreas marinas protegidas del país!. </strong> Para ello, haz <strong>CLICK </strong> 
             en cada región del Mapa, así podrás visualizarlas y conocer más sobre ellas.</p>
           <p>En Chile, existen cuatro tipos de AMP:</p>
       <ol>
@@ -110,7 +109,6 @@ const MapaSVG = () => {
           )}
         </div>
       </div>
-    </div>
   );
 };
 
