@@ -1,0 +1,316 @@
+body {
+    background-color: #D5D1D0;
+}
+.MapContainer h6 {
+    text-align: center;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 100%;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    /* Organiza los elementos en una fila */
+    align-items: flex-start;
+    /* Alinea los elementos al principio verticalmente */
+    margin-top: 20px;
+    /* Espacio superior para separar del título */
+    position: relative;
+}
+
+.infoMapaContainer {
+    position: absolute; /* Posiciona este contenedor sobre el SVG */
+    top: 0;
+    left: 10; /* Alinea el contenedor en la parte izquierda */
+    z-index: 10; /* Asegura que esté por encima del SVG */
+    padding: 30px;
+    /* Espaciado interno para el contenido */
+    width: 53%;
+    /* Ajusta el ancho del contenedor según sea necesario */
+    height: 100%;
+    /* Ajusta la altura para cubrir todo el SVG, si es necesario */
+}
+
+.infoMapaContainer p {
+    font-size: 18px;
+    text-align: justify;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.1;
+}
+
+.infoMapaContainer h4 {
+    font-size: 19px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.svgContainer {
+    position: relative;
+    overflow: hidden;
+    /* Evita que el contenido desborde */
+    margin-left: 200px;
+}
+
+.svgContainer svg {
+    height: auto;
+    /* Mantiene la proporción del SVG */
+    max-width: 120%;
+    /* Limita el tamaño máximo del SVG al tamaño del contenedor */
+}
+
+.svgContainer path {
+    fill: #5899a3;
+    stroke: #013F56;
+    stroke-width: 1.5px;
+    /* Grosor del borde */
+}
+
+.svgContainer path:hover {
+    fill: #a7bcbd;
+}
+
+.infoPopup {
+    background-color: #013F56;
+    border: solid #D5D1D0;
+    padding: 10px;
+    border-radius: 10px;
+    pointer-events: auto; 
+    z-index: 1000;
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    width: 90%; /* Tamaño fijo del ancho del pop-up */
+    height: 90%; /* Tamaño fijo de la altura del pop-up */
+    display: flex;
+    flex-direction: column;
+}
+
+.infoPopup h2 {
+    font-size: 20px;
+    margin: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #1E90FF;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.infoPopup p {
+    font-size: 18px;
+    margin: 5px 0;
+    text-align: justify;
+    /* Justifica el texto */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 10px;
+}
+
+.infoPopup h5 {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.imagenContainer {
+    flex-shrink: 0;
+    /* Evita que el contenedor de la imagen se reduzca, pero no lo expande innecesariamente */
+    width: 50%;
+    /* Limita el ancho máximo del contenedor de la imagen */
+    display: flex;
+    /* Usa flexbox para centrar la imagen dentro del contenedor */
+    justify-content: center;
+    /* Centra la imagen horizontalmente */
+    align-items: center;
+}
+
+.imagenContainer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.closeButton {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background: #013F56;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    width: 30px;
+    /* Ancho fijo para hacer el botón más cuadrado */
+    height: 30px;
+    /* Altura fija para hacer el botón más cuadrado */
+    text-align: center;
+    /* Centrar el contenido */
+    line-height: 20px;
+    /* Ajustar la altura de la línea para centrar el texto verticalmente */
+}
+
+.areaContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    height: 90vh;
+}
+
+.text-Container {
+    flex: 1;
+    padding-right: 10px;
+    width: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+    .infoMapaContainer {
+        width: 58%;
+        margin-left: 40px;
+    }
+
+    .infoMapaContainer p {
+        font-size: 14px;
+        margin: 0px;
+        line-height: 1.2;
+    }
+    .infoMapaContainer h4 {
+        font-size: 14px;
+    }
+
+    .infoPopup {
+        width: 80%;
+        /* Reducir el tamaño del pop-up en tablets */
+        height: 80%;
+        /* Ajustar la altura */
+        overflow-y: scroll;
+    }
+
+    .infoPopup p {
+        font-size: 11px;
+    }
+
+    .infoPopup h5 {
+        font-size: 12px;
+    }
+
+    .imagenContainer {
+        width: 60%;
+        /* Ajustar el tamaño de la imagen en tablets */
+    }
+    .svgContainer {
+        margin-left: 350px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .mainContent {
+        flex-direction: column;
+        /* Cambiar a columna en pantallas pequeñas */
+    }
+    .infoMapaContainer {
+        position: relative;
+        width: 100%;
+        padding: 20px;
+        
+    }
+    .infoMapaContainer p {
+        font-size: 14px;
+    }
+    .MapContainer h4 {
+        font-size: 14px;
+        /* Reducir tamaño del texto en móviles */
+    }
+    .svgContainer {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .infoPopup {
+        width: 80%;
+        /* Ajustar tamaño para pantallas pequeñas */
+        height: 80%;
+        /* Permitir que la altura crezca según el contenido */
+        overflow-y: scroll;
+    }
+
+    .areaContainer {
+        flex-direction: column;
+        /* Cambiar a columna en pantallas pequeñas */
+    }
+
+    .textContainer {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .imagenContainer {
+        width: 100%;
+        /* Ajustar imagen para pantallas pequeñas */
+        margin-top: 10px;
+    }
+
+    .closeButton {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .MapContainer h6 {
+        font-size: 28px;
+    }
+    .MapContainer h4 {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 0px;
+    }
+    .MapContainer h3 {
+        font-size: 14px;
+        text-align: justify;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .infoMapaContainer{
+        width: 90%;
+        margin-left: 0px;
+    }
+
+    .infoPopup {
+        width: 90%;
+        /* Usar todo el ancho de la pantalla */
+        height: 80%;
+        padding: 5px;
+        overflow-y: scroll;
+    }
+
+    .infoPopup p,
+    .infoPopup h2,
+    .infoPopup h5 {
+        font-size: 14px;
+        /* Reducir tamaño de las fuentes */
+    }
+
+    .imagenContainer {
+        width: 100%;
+        /* Imagen ocupa todo el ancho */
+    }
+
+    .areaContainer {
+        padding-bottom: 5px;
+    }
+
+    .closeButton {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+}
